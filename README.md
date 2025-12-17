@@ -321,7 +321,7 @@ This section documents key workflows and validations in the ATS backend using re
 This screenshot shows a successful candidate registration using the `/auth/register` endpoint.  
 The API returns a confirmation message indicating the user was created successfully.
 
-![Candidate Registration Success](screenshots/candidate_registration_success.png)
+![Candidate Registration Success](screenshots/candidate_registration_success.png.png)
 
 ---
 
@@ -330,7 +330,7 @@ The API returns a confirmation message indicating the user was created successfu
 This screenshot demonstrates a successful login via `/auth/login`.  
 A JWT token is generated and returned, which is required for authenticated API access.
 
-![Candidate Login Token Generated](screenshots/candidate_login_token_generated.png)
+![Candidate Login Token Generated](screenshots/candidate_login_token_generated.png.png)
 
 ---
 
@@ -339,7 +339,7 @@ A JWT token is generated and returned, which is required for authenticated API a
 This screenshot shows a candidate successfully applying for a job using the `/applications` endpoint.  
 The application is created with an initial stage of `APPLIED`.
 
-![Candidate Apply Job Success](screenshots/candidate_apply_job_success.png)
+![Candidate Apply Job Success](screenshots/candidate_apply_job_success.png.png)
 
 ---
 
@@ -348,7 +348,7 @@ The application is created with an initial stage of `APPLIED`.
 This screenshot verifies Role-Based Access Control (RBAC).  
 A user without the `RECRUITER` role attempts to create a job and receives a `403 Forbidden` response.
 
-![RBAC Job Create Forbidden](screenshots/rbac_job_create_forbidden.png)
+![RBAC Job Create Forbidden](screenshots/rbac_job_create_forbidden.png.png)
 
 ---
 
@@ -358,7 +358,7 @@ This screenshot shows a recruiter successfully updating an application stage fro
 using the `/applications/:id/stage` endpoint.  
 The workflow rules are validated before the update.
 
-![Application Stage Updated to Screening](screenshots/application_stage_updated_screening.png)
+![Application Stage Updated to Screening](screenshots/application_stage_updated_screening.png.png)
 
 ---
 
@@ -382,6 +382,6 @@ This ensures full traceability of application lifecycle changes.
 This screenshot confirms that the background email worker is running independently.  
 It listens to the Redis/BullMQ queue and processes email notification jobs asynchronously.
 
-![Email Worker Running](screenshots/email_worker_running.png)
+![Email Worker Running](screenshots/email_worker_running.png.png)
 
 ---
