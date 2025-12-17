@@ -310,16 +310,78 @@ This project is for educational and portfolio purposes.
 
 ---
 
-## 📸 Screenshots (Proof of Execution)
+## 📸 API Workflow Screenshots (Proof of Execution)
 
-### Invalid Stage Transition
+This section documents key workflows and validations in the ATS backend using real API responses captured during testing.
 
-![Invalid Stage Transition](screenshots/invalid-stage-transition.png)
+---
 
-### Application History Audit Log
+### 🧑 Candidate Registration Success
 
-![Application History](screenshots/application-history.png)
+This screenshot shows a successful candidate registration using the `/auth/register` endpoint.  
+The API returns a confirmation message indicating the user was created successfully.
 
-### Email Worker Running
+![Candidate Registration Success](screenshots/candidate_registration_success.png)
 
-![Email Worker](screenshots/email-worker-running.png)
+---
+
+### 🔐 Candidate Login & Token Generation
+
+This screenshot demonstrates a successful login via `/auth/login`.  
+A JWT token is generated and returned, which is required for authenticated API access.
+
+![Candidate Login Token Generated](screenshots/candidate_login_token_generated.png)
+
+---
+
+### 📄 Candidate Applies for Job
+
+This screenshot shows a candidate successfully applying for a job using the `/applications` endpoint.  
+The application is created with an initial stage of `APPLIED`.
+
+![Candidate Apply Job Success](screenshots/candidate_apply_job_success.png)
+
+---
+
+### 🚫 RBAC – Job Creation Forbidden
+
+This screenshot verifies Role-Based Access Control (RBAC).  
+A user without the `RECRUITER` role attempts to create a job and receives a `403 Forbidden` response.
+
+![RBAC Job Create Forbidden](screenshots/rbac_job_create_forbidden.png)
+
+---
+
+### 🔄 Application Stage Updated (Screening)
+
+This screenshot shows a recruiter successfully updating an application stage from `APPLIED` to `SCREENING`  
+using the `/applications/:id/stage` endpoint.  
+The workflow rules are validated before the update.
+
+![Application Stage Updated to Screening](screenshots/application_stage_updated_screening.png)
+
+---
+
+### 🕵️ Application History Audit Log
+
+This screenshot displays the audit history retrieved from `/applications/:id/history`.  
+It records:
+- Previous stage
+- New stage
+- User who made the change
+- Timestamp of the action
+
+This ensures full traceability of application lifecycle changes.
+
+![Application Stage History View](screenshots/application_stage_history_view.png)
+
+---
+
+### 📬 Email Worker Running
+
+This screenshot confirms that the background email worker is running independently.  
+It listens to the Redis/BullMQ queue and processes email notification jobs asynchronously.
+
+![Email Worker Running](screenshots/email_worker_running.png)
+
+---
