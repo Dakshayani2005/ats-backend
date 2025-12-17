@@ -373,7 +373,7 @@ It records:
 
 This ensures full traceability of application lifecycle changes.
 
-![Application Stage History View](screenshots/application_stage_history_view.png)
+![Application Stage History View](screenshots/application_stage_history_view.png.png)
 
 ---
 
